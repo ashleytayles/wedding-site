@@ -1,4 +1,4 @@
-class Schedule extends HTMLElement {
+class Map extends HTMLElement {
     constructor() {
       super();
     }
@@ -9,7 +9,7 @@ class Schedule extends HTMLElement {
 
         if (pageParam == 100) {
         // Fetch the external HTML file
-        fetch('components/schedule_c.html')
+        fetch('components/map_c.html')
             .then(response => response.text())
             .then(html => {
                 // Set the fetched HTML content as the innerHTML of the custom element
@@ -21,7 +21,7 @@ class Schedule extends HTMLElement {
         }
         if (pageParam == 930) {
             // Fetch the external HTML file
-            fetch('components/schedule_r.html')
+            fetch('components/map_r.html')
                 .then(response => response.text())
                 .then(html => {
                     // Set the fetched HTML content as the innerHTML of the custom element
@@ -34,4 +34,4 @@ class Schedule extends HTMLElement {
     }
 }
 
-customElements.define('schedule-component', Schedule);
+customElements.define('map-component', Map);
