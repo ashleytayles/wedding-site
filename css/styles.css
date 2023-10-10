@@ -11362,4 +11362,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-family: Maison Neue,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;
   height: 100px;
   width: 400px;
+  max-width: 100%;
+  text-align: left !important;
+  margin-bottom: 10px;
 }
