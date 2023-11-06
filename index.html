@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Chelsea ♥ Ashley</title>
+        <title>Chelsea ♥ Ashley - RSVP </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -15,10 +15,14 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="preload" as="script" href="js/findguest.js">
+        <link rel="preload" as="script" href="js/scripts.js">
         <!-- Common components -->
         <script src="components/hero.js" type="text/javascript" defer></script>
         <script src="components/footer.js" type="text/javascript" defer></script>
         <script src="components/nav.js" type="text/javascript" defer></script>
+        <script src="components/map.js" type="text/javascript" defer></script>
+        <script src="components/schedule.js" type="text/javascript" defer></script>
         <script src="js/countdown.js"></script>
     </head>
     <body id="page-top">
@@ -26,191 +30,50 @@
         <nav-component></nav-component>
         <!-- Masthead-->
         <hero-component></hero-component>
-        <!-- Services-->
-        <section class="page-section" id="venue">
+        <!-- Custom Schedule-->
+        <schedule-component></schedule-component>
+        <!-- Custom Maps-->
+        <map-component></map-component>
+        <!-- RSVP Section-->
+        <section class="page-section bg-light" id="rsvp">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Venue</h2>
-                    <h3 class="section-subheading text-muted">Rowheath Pavillion, Bournville, Birmingham, B30 1HH</h3>
+                    <h2 class="section-heading text-uppercase">RSVP</h2>
                 </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-sm-6 mb-3">
-                            <!-- Rowheath -->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/Rowheath_1.jpg" alt="..." />
-                                </a>
 
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-3">
-                            <!-- Bournville -->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/Birmingham_1.jpg" alt="..." />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-3">
-                            <!-- Birmingham -->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/Bournville_1.jpg" alt="..." />
-                                </a>
-
-                            </div>
-                        </div>
-                      </div>
-                    <div class="row justify-content-md-center"> 
-                        <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
-                        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJz_6EF3C-cEgRBVX9yVvmzWw&key=AIzaSyDX3O8bUJzTRn2Eh_fj09PB0LpkiqpetME"></iframe> 
-                    </div>
-<!--                     <div class="row justify-content-center"></div>
-                        <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">
-                            <h1>Directions</h1>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                          <div class="col-sm justify-content-center">
-
-                            <h2>Car</h2>
-
-                                <h6>Via M40</h3>
-                                <ul>
-                                <li>At the end of the M40 keep right taking the fork sign-posted 'M42(W) BHAM (S&W)'</li>
-                                <li>Leave the M42 at junction 2, following signs for Cadbury World / A441</li>
-                                <li>Continue on the A441 until you reach the village of Cotterage. The village is sign-posted and you will see a
-                                train station on the left following by two roundabouts</li>
-                                <li>Take the 2nd exit (lefthand lane) on the first roundabout, followed by the 1st exit on the second roundabout,
-                                following signs for the A4040 and Bournville</li>
-                                <li>Continue on the A441 and take a left onto Mary Vale Lane. You will approaching the turn off when you pass a 'Esso/Tesco'
-                                on your right followed by a pedestrian crossing. Mary Vale Lane is the left just after the crossing</li>
-                                At the end of Mary Vale Road, head straight over the roundabout onto Heath Road</li>
-                                <li>The carpark entrance in the left turn after the pedestrian crossing</li>
-                                </ul>
-
-
-                          </div>
-
-                        </div>
-                      </div> -->
-                  </div>
+                <div class="text-center">
+                    <script>
+                        const queryString = window.location.search;
+                        console.log(queryString);
+                        const urlParams = new URLSearchParams(queryString);
+                        const product = urlParams.get('guest')
+                    console.log(guest);
+                        
+                    </script>
+                <div id="rsvpform"></div>
+                <script src="js/findguest.js"></script>
+                </div>
             </div>
         </section>
+        <!-- Registry Section-->
+        <section class="page-section text-center" id="registry">
+            <h1>Registry</h1>
+            <hr class="solid">
+            <p>We are so excited to celebrate our special day with all of you and are truly grateful for any contributions towards our future!</p>
+            <h2>Cash Gift</h2>
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col-sm text-center schedule">
+                    <a href="https://monzo.me/ashleytayles?d=Wedding%20Fund"><button type="button" class="btn btn-monzo"><img style="height:80%;margin-right: 20px;" src="assets/img/monzologo.png">Wedding Fund</button></a>
+                    <a href="https://monzo.me/ashleytayles?d=Honeymoon%20Fund"><button type="button" class="btn btn-monzo"><img style="height:80%;margin-right: 20px;" src="assets/img/monzologo.png">Honeymoon Fund</button></a>
+                </div>
+                </div>
+              </div>
 
+            <br><script id='script_myregistry_giftlist_iframe' type='text/javascript' src='//www.myregistry.com//Visitors/GiftList/iFrames/EmbedRegistry.ashx?r=a1eDGFzvc9oul9G0JvbvTg2&v=2'></script>
+        </section>
         <!-- Footer-->
         <footer-component></footer-component>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Rowheath Pavillion</h2>
-                            
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/Rowheath_1.jpg" alt="..." />
-
-                                    <p>In 1919, the workforce at Cadburys was around 7500 and so work began by Bournville Village Trust to develop 75 acres at Row Heath Farm into a sports ground.</p>
-                                    <p>At its opening in 1924, Rowheath Pavilion was central to the sports and park complex. Designed by John Ramsay Armstrong, it occupies the highest part of the playing fields. 145 foot long, the Italianate pavilion was designed to serve many purposes.</p>
-
-                                    <div class="sow-image-container">
-                                        <img src="https://rowheathpavilion.co.uk/wp-content/uploads/2018/08/old-duck-pnd812.jpg" width="640" height="468" srcset="https://rowheathpavilion.co.uk/wp-content/uploads/2018/08/old-duck-pnd812.jpg 640w, https://rowheathpavilion.co.uk/wp-content/uploads/2018/08/old-duck-pnd812-300x219.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" title="old duck pnd[812]" alt="" class="so-widget-image">
-                                    </div>
-
-                                    <p>It provided Changing rooms to serve the sports people who made use of the 14 football, 13 cricket, 4 hockey and two rugby pitches, 31 tennis courts, two bowling greens, two croquet lawns, an athletics track, clock golf and a boating and fishing lake.</p>
-
-                                    <div class="sow-image-container">
-                                        <img src="https://rowheathpavilion.co.uk/wp-content/uploads/2018/08/team-meeting813.jpg" width="939" height="960" srcset="https://rowheathpavilion.co.uk/wp-content/uploads/2018/08/team-meeting813.jpg 939w, https://rowheathpavilion.co.uk/wp-content/uploads/2018/08/team-meeting813-293x300.jpg 293w, https://rowheathpavilion.co.uk/wp-content/uploads/2018/08/team-meeting813-768x785.jpg 768w" sizes="(max-width: 939px) 100vw, 939px" title="team meeting[813]" alt="" class="so-widget-image">
-                                    </div>
-
-                                    <p>The Terrace Room has always been central to entertainment at Rowheath, being used for work dinner and balls.</p>
-                                    <p>Family entertainment at weekend included musical performances from Cadburys bands, using the two Bandstands.</p>
-                                    <p>In 1937 a modernist lido was added to Rowheath which proved extremely popular until the seventies.</p>
-                                   
-                                    <div class="siteorigin-widget-tinymce textwidget">
-                                        <p>The Lido was closed in the seventies, due to the Health and Safety regulations and noise issues. The range of sport reduced to football, rugby, hockey and road running. It became a struggle to keep&nbsp; Rowheath Pavilion open and it was forced to close for a while in the eighties. The Lido site and a further 65 acres was sold off for housing development. The bandstands disappeared through vandalism and the park area became disused and overgrown.</p>
-                                    <p>Since Trinity Christian Centre were assigned the lease, the park has become a popular family destination again, the Pavilion is popular with local community groups for all ages and football, rugby and running continue to thrive.</p>
-                                    <p>Part of Rowheath Pavilion became a listed building in 2017, a sign of its importance to the local community.</p>
-                                    </div>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 2 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Birmingham</h2>
-                            
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/Birmingham_1.jpg" alt="..." />
-
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Bournville</h2>
-
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/Bournville_1.jpg" alt="..." />
-
-
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

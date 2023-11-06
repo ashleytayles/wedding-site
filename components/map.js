@@ -7,7 +7,7 @@ class Map extends HTMLElement {
         const urlParams = new URLSearchParams(window.location.search);
         const pageParam = urlParams.get('code');
 
-        if (pageParam == 100) {
+        if (urlParams.has('d')) {
         // Fetch the external HTML file
         fetch('components/map_c.html')
             .then(response => response.text())
@@ -19,7 +19,7 @@ class Map extends HTMLElement {
                 console.error('Error fetching HTML file:', error);
             });
         }
-        if (pageParam == 930) {
+        if (urlParams.has('e')) {
             // Fetch the external HTML file
             fetch('components/map_r.html')
                 .then(response => response.text())

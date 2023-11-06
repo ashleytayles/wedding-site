@@ -4,10 +4,12 @@ class Schedule extends HTMLElement {
     }
 
     connectedCallback() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const pageParam = urlParams.get('code');
 
-        if (pageParam == 100) {
+        const urlParams = new URLSearchParams(queryString);
+        urlParams.get('d');
+        urlParams.get('e');
+
+        if (urlParams.has('d')) {
         // Fetch the external HTML file
         fetch('components/schedule_c.html')
             .then(response => response.text())
@@ -19,7 +21,7 @@ class Schedule extends HTMLElement {
                 console.error('Error fetching HTML file:', error);
             });
         }
-        if (pageParam == 930) {
+        if (urlParams.has('e')) {
             // Fetch the external HTML file
             fetch('components/schedule_r.html')
                 .then(response => response.text())
