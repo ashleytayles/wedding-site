@@ -10921,6 +10921,11 @@ p {
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #B9861F;
 }
+#mainNav.navbar-shrink {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #212529;
+}
 
 @media (min-width: 992px) {
   #mainNav {
@@ -11366,3 +11371,4 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: left !important;
   margin-bottom: 10px;
 }
+
