@@ -15,7 +15,6 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="preload" as="script" href="js/findguest.js">
         <link rel="preload" as="script" href="js/scripts.js">
         <!-- Common components -->
         <script src="components/hero.js" type="text/javascript" defer></script>
@@ -25,6 +24,7 @@
         <script src="components/schedule.js" type="text/javascript" defer></script>
         <script src="components/food.js" type="text/javascript" defer></script>
         <script src="components/room.js" type="text/javascript" defer></script>
+        <script src="components/rsvp.js" type="text/javascript" defer></script>
         <script src="js/countdown.js"></script>
     </head>
     <body id="page-top">
@@ -32,32 +32,13 @@
         <nav-component></nav-component>
         <!-- Masthead-->
         <hero-component></hero-component>
-        <!-- Custom Schedule-->
+        <!-- Schedule Section -->
         <schedule-component></schedule-component>
-        <!-- Custom Maps-->
-        <map-component></map-component>
         <!-- RSVP Section-->
-        <section class="page-section bg-light" id="rsvp">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">RSVP</h2>
-                </div>
-
-                <div class="text-center">
-                    <script>
-                        const queryString = window.location.search;
-                        console.log(queryString);
-                        const urlParams = new URLSearchParams(queryString);
-                        const product = urlParams.get('guest')
-                    console.log(guest);
-                        
-                    </script>
-                <div id="rsvpform"></div>
-                <script src="js/findguest.js"></script>
-                </div>
-            </div>
-        </section>
-        <!-- Food Menu-->
+        <rsvp-component></rsvp-component>
+        <!-- Direction Section -->
+        <map-component></map-component>
+        <!-- Food Section-->
         <food-component></food-component>
         <!-- Room Info -->
         <room-component></room-component>
